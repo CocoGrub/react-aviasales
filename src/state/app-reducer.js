@@ -3,6 +3,7 @@ import * as axios from "axios";
 const LoadTicket='app-reducer/LoadTicket'
 
 const initialState={
+    demo:'',
     tickets:[
 
     ]
@@ -10,7 +11,7 @@ const initialState={
 }
 function appReducer(state=initialState,action) {
     switch (action.type) {
-        case LoadTicket:return {...state,tickets: [...state.tickets,action.payload]}
+        case LoadTicket:return {...state,tickets: action.payload}
         default:return state
 
     }
@@ -24,22 +25,17 @@ export const LoadTicketsAC=(list)=>{
     }
 }
 export const ThunkLoadTicketsData=()=> {
-    return (dispatch) =>{
-        axios.get(`https://front-test.beta.aviasales.ru/search`).then((response)=>{
-            if(response.searchId){
-                const {id}=response.searchId
-
-            }
-        }).then((id)=>{
-            axios.get(`https://front-test.beta.aviasales.ru/tickets?searchId=4niyd${id}`)
-                .then((response)=>{
-                    const tickets=response.tickets
-                    dispatch(LoadTicketsAC(tickets))
-                    console.log(tickets)
-                })
-
+    return (dispatch)=>{
+         axios.get(`https://front-test.beta.aviasales.ru/search`)
+            .then((response) => {
+                if(response){
+                  axios.get(`https://front-test.beta.aviasales.ru/tickets?searchId=${response.data.searchId}`).then((response)=>{
+                      console.log(response)
+                      dispatch(LoadTicketsAC(response.data.tickets))
+                  })
+                }
         })
+
     }
 }
-
 export default appReducer
