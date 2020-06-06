@@ -1,4 +1,6 @@
 import * as axios from "axios";
+import axiosRetry from 'axios-retry';
+axiosRetry(axios, { retries: 3 });
 
 const LoadTicket='app-reducer/LoadTicket'
 
@@ -28,12 +30,10 @@ export const ThunkLoadTicketsData=()=> {
     return (dispatch)=>{
          axios.get(`https://front-test.beta.aviasales.ru/search`)
             .then((response) => {
-                if(response){
                   axios.get(`https://front-test.beta.aviasales.ru/tickets?searchId=${response.data.searchId}`).then((response)=>{
-                      console.log(response)
                       dispatch(LoadTicketsAC(response.data.tickets))
                   })
-                }
+
         })
 
     }

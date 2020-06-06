@@ -1,8 +1,8 @@
 import React from "react";
-import TicketsContainer from '../components/ticketsContainer'
+import TicketsContainer from '../components/tickets/ticketsContainer'
 const Main=()=>{
     return <>
-    <h1>Main page</h1>
+
         <TicketsContainer/>
     </>
 }

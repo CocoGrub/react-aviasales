@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
-import {ThunkLoadTicketsData} from '../state/app-reducer'
+import {ThunkLoadTicketsData} from '../../state/app-reducer'
 import Tickets from "./tickets";
 
 const TicketsContainer =(props)=>{
