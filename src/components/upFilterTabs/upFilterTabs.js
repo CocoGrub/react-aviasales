@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {SetFilterAC} from "../../state/app-reducer";
 import styles from './upFilterTabs.module.css'
 const UpFilterTabs=({SetFilterAC})=>{
-    return <div className={styles.tabs} >
-        <div onClick={()=>SetFilterAC('FASTEST')}>Самый быстрый</div>
-        <div onClick={()=>SetFilterAC('CHEAPER')}>Самый дешевый</div>
-    </div>
+    const [activeElement,changeActiveElement]=useState('null')
+    return <>
+        <div className={styles.select1} onClick={()=>SetFilterAC('CHEAPER')}>Самый дешевый</div>
+        <div className={styles.select2} onClick={()=>SetFilterAC('FASTEST')}>Самый быстрый</div>
+
+    </>
 }
 export default UpFilterTabs;
