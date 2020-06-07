@@ -1,8 +1,6 @@
 
-.root{
-
-}
 .ticketMain{
+
     display: grid;
     width: 502px;
     grid-template-columns: [q]20px [w]141px [e]20px [r]141px [t]20px [y]141px [u]20px;

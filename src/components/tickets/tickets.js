@@ -5,7 +5,7 @@ const Tickets=(props)=>{
     useEffect(()=>{
         props.ThunkLoadTicketsData()
     },[])
-    return <>
+    return <div style={{gridArea:'main'}}>
         {props.tickets.map((x,k)=>{
             return<div key={k} style={{marginTop: ` 20px`}}>
             <Ticket   ticket={x}>
@@ -14,7 +14,7 @@ const Tickets=(props)=>{
             </div>
 
         })}
-        </>
+        </div>
 
 }
 export default Tickets

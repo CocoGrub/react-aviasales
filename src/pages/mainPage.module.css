@@ -1,0 +1,9 @@
+.mainPage{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "header header header header"
+            "some main . sidebar"
+            "footer main footer footer";
+}

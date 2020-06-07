@@ -21,7 +21,7 @@ const Ticket = ({ticket}) => {
     const durationHM=(minutes)=> {
         const hours = Math.trunc(minutes/60);
         const min = minutes % 60;
-        return hours + 'ч: ' + min + 'м';
+        return hours + 'ч ' + min + 'м';
     }
     const transferCount=(x)=>{
         if(x.length<=0){
@@ -37,7 +37,7 @@ const Ticket = ({ticket}) => {
     const image = `http://pics.avs.io/99/36/${carrier}.png`
 return <div className={style.ticketMain}>
             <div className={style.header}>
-                <div className={style.price}>{price} Р
+                <div className={style.price}>{price.toString().slice(0, 2) + " " +price.toString().slice(2)} Р
                 </div>
                 {/*<div className={style.logo} style={{background:`url(${image})`,backgroundRepeat:'no-repeat;'}}></div>*/}
                 <img src={image}  className={style.logo} ></img>
