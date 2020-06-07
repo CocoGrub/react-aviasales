@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
-import Ticket from "../ticket/ticket";
+import Ticket from "./ticket/ticket";
 
 const Tickets=(props)=>{
     useEffect(()=>{
         props.ThunkLoadTicketsData()
     },[])
-    return <div style={{gridArea:'main'}}>
+    return <div >
         {props.tickets.map((x,k)=>{
             return<div key={k} style={{marginTop: ` 20px`}}>
             <Ticket   ticket={x}>
