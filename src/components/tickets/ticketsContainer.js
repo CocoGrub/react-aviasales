@@ -2,10 +2,10 @@ import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {ThunkLoadTicketsData} from '../../state/app-reducer'
 import Tickets from "./tickets";
-
+import styles from './tickets.module.css'
 const TicketsContainer = (props) => {
 
-    return <div style={{gridArea: 'main'}}>
+    return <div className={styles.tickets} >
         <Tickets tickets={props.tickets}
                  ThunkLoadTicketsData={props.ThunkLoadTicketsData}
                  TicketsNoTransfer={props.TicketsNoTransfer}/>

@@ -1,6 +1,6 @@
-.tabs{
+.logo{
     grid-column-start: r;
     /*grid-column-end: five;*/
-    grid-row-start:w;
+    grid-row-start:q;
     /*grid-row-end: 3;*/
 }

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {SetFilterAC} from "../../state/app-reducer";
-
+import classes from './filter.module.css'
 const Filter = ({SetFilterAC}) => {
     const [toggleSearch, changeToggleSearch] = useState(null)
 
@@ -9,7 +9,7 @@ const Filter = ({SetFilterAC}) => {
         SetFilterAC(x)
     }
 
-    return <div>
+    return <div className={classes.filter}>
         <h1>количество пересадок</h1>
         <div>
             <input checked={toggleSearch === 'SHOW_ALL'} type={"checkbox"} onClick={() => {

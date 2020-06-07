@@ -5,8 +5,8 @@ import {SetFilterAC} from "../../state/app-reducer";
 
 const UpFilterTabsContainer=(props)=>{
 
-    return <div>
+    return <>
         <UpFilterTabs SetFilterAC={props.SetFilterAC}/>
-    </div>
+    </>
 }
 export default connect(null,{SetFilterAC})(UpFilterTabsContainer)

@@ -3,9 +3,9 @@ import {connect} from "react-redux";
 import Filter from "./filter";
 import {SetFilterAC} from "../../state/app-reducer";
 const FilterModuleContainer=(props)=>{
-return<div>
+return<>
     <Filter SetFilterAC={props.SetFilterAC}/>
-</div>
+</>
 
 
 }
