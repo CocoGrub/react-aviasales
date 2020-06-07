@@ -4,11 +4,15 @@ import Filter from "./filter";
 import {SetFilterAC} from "../../state/app-reducer";
 const FilterModuleContainer=(props)=>{
 return<>
-    <Filter SetFilterAC={props.SetFilterAC}/>
+    <Filter SetFilterAC={props.SetFilterAC}
+    currentFilter={props.currentFilter}/>
 </>
 
-
+}
+const mapStateToProps=(state)=>{
+    return{
+        currentFilter:state.app.filter
+    }
 }
 
-
-export default connect(null, {SetFilterAC})(FilterModuleContainer);
+export default connect(mapStateToProps, {SetFilterAC})(FilterModuleContainer);

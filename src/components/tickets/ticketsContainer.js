@@ -62,7 +62,7 @@ const mapStateToProps = (state) => {
 
 
     return {
-        tickets: getVisibleTickets(state.app.tickets, state.app.filter)
+        tickets: getVisibleTickets(state.app.tickets, state.app.filter).slice(0, 5)
     }
 
 }
