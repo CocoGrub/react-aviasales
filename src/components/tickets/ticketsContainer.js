@@ -39,12 +39,13 @@ const getVisibleTickets = (tickets, filter) => {
 
         case 'FASTEST':
             const x = tickets.reduce((res, x) => {
-                return (x.segments[0].duration < res.segments[0].duration) ? x : res
+                return (x.segments[0].duration+x.segments[1].duration < res.segments[0].duration+res.segments[1].duration) ? x : res
             })
-            const y = tickets.reduce((res, x) => {
-                return (x.segments[1].duration < res.segments[1].duration) ? x : res
-            })
-            return x.duration < y.duration? [x]:[y]
+            // const y = tickets.reduce((res, x) => {
+            //     return (x.segments[1].duration < res.segments[1].duration) ? x : res
+            // })
+            // return x.duration < y.duration? [x]:[y] //returns one way ( fastest there or back)
+            return [x]//returns fastest there and back
 
         case 'CHEAPER':
 
