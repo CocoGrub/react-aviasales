@@ -40,7 +40,7 @@ return <div className={style.ticketMain}>
                 <div className={style.price}>{price.toString().slice(0, 2) + " " +price.toString().slice(2)} Р
                 </div>
                 {/*<div className={style.logo} style={{background:`url(${image})`,backgroundRepeat:'no-repeat;'}}></div>*/}
-                <img src={image}  className={style.logo} ></img>
+                <img src={image} alt={carrier} className={style.logo} ></img>
             </div>
 
             <div className={style.infoBlock1}>

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {SetFilterAC} from "../../state/app-reducer";
+import React from "react";
+
 import styles from './filter.module.css'
 const Filter = ({SetFilterAC,currentFilter}) => {
 

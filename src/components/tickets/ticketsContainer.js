@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import {ThunkLoadTicketsData} from '../../state/app-reducer'
 import Tickets from "./tickets";
@@ -16,7 +16,7 @@ const TicketsContainer = (props) => {
 }
 
 const getVisibleTickets = (tickets, filter) => {
-    console.log(filter)
+
     switch (filter) {
         case 'SHOW_ALL':
             return tickets
