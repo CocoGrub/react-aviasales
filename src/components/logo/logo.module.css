@@ -3,4 +3,6 @@
     /*grid-column-end: five;*/
     grid-row-start:q;
     /*grid-row-end: 3;*/
+    align-self: center;
+    justify-self: center;
 }
