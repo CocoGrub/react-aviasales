@@ -1,9 +1,7 @@
 import * as axios from "axios";
 import axiosRetry from 'axios-retry';
+import {FILTER, LOAD_TICKET} from "./types";
 axiosRetry(axios, { retries: 3 });
-
-const LoadTicket='app-reducer/LoadTicket'
-const FILTER='app-reduce/FILTER'
 
 const initialState={
     filter:'SHOW_ALL',
@@ -14,7 +12,7 @@ const initialState={
 }
 function appReducer(state=initialState,action) {
     switch (action.type) {
-        case LoadTicket:return {...state,tickets: action.payload}
+        case LOAD_TICKET:return {...state,tickets: action.payload}
         case FILTER:return {...state,filter: action.payload}
 
         default:return state
@@ -34,7 +32,7 @@ export const SetFilterAC=(x)=>{
 
 export const LoadTicketsAC=(list)=>{
     return{
-        type:LoadTicket,
+        type:LOAD_TICKET,
         payload:list
     }
 }
