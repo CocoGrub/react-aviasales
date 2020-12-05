@@ -1,8 +1,8 @@
-.logo{
-    grid-column-start: r;
-    /*grid-column-end: five;*/
-    grid-row-start:q;
-    /*grid-row-end: 3;*/
-    align-self: center;
-    justify-self: center;
+.logo {
+  grid-column-start: r;
+
+  grid-row-start: q;
+
+  align-self: center;
+  justify-self: center;
 }

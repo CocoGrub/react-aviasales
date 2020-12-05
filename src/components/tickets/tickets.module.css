@@ -1,6 +1,4 @@
-.tickets{
-    grid-column-start: r;
-    /*grid-column-end: five;*/
-    grid-row-start:e;
-    /*grid-row-end: 3;*/
+.tickets {
+  grid-column-start: r;
+  grid-row-start: e;
 }
